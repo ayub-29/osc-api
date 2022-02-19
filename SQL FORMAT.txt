@@ -1,0 +1,54 @@
+CREATE TABLE exhibits (
+	id INT PRIMARY KEY,
+	name VARCHAR (255) UNIQUE NOT NULL,
+	photoId VARCHAR (255) NOT NULL,
+	description TEXT NOT NULL
+);
+
+CREATE TABLE challenges (
+	challengeId INT,
+	name VARCHAR(255) NOT NULL,
+	photoId VARCHAR (255),
+	description TEXT NOT NULL,
+	exhibitId INT,
+	PRIMARY KEY (challengeId, exhibitId),
+ 	constraint fk_challenges_exhibits
+     	  foreign key (exhibitId) 
+     	  REFERENCES exhibits (id)
+);
+
+Weston Family Innovation Centre
+
+
+
+
+INSERT INTO exhibits VALUES ('1', 'The HotZone', 'hotzoneImg', 'The HotZone is the place to pose questions, debate answers, scan headlines, view events and get the real story via multiple screens and live stage presentations.');
+
+INSERT INTO exhibits VALUES ('2', 'The AstraZeneca Human Edge', 'astrazenecaImg', 'Explore the potential and limits of the human body. Plunge into the mind of a free diver, grapple with a climbing wall and see what it takes to summit Everest. Discover how your body deals with danger and find out what is humanly possible for you.');
+
+INSERT INTO exhibits VALUES ('3', 'Weston Family Innovation Centre', 'wficImg', 'From activities that hone your innovation skills to exciting new materials and media tools to citizen science projects and problem-solving challenges, the Weston Family Innovation Centre inspires you to take experimentation to a whole new level.');
+
+
+INSERT INTO challenges VALUES ('1', 'River Pond', '', 'Jump on the fish pad', '1');
+INSERT INTO challenges VALUES ('2', 'Polling Station', '', 'Answer a question at the polling station', '1');
+INSERT INTO challenges VALUES ('3', 'Skeleton', '', 'Shake Fred The Skeletons hand', '1');
+INSERT INTO challenges VALUES ('4', 'Idea Gallery', '', 'Visit the idea galary', '1');
+INSERT INTO challenges VALUES ('5', 'Portals', '', 'Walk through one of the portals', '1');
+
+INSERT INTO challenges VALUES ('1', 'In the Beginning', '','Explore the in-utero development.', '2');
+INSERT INTO challenges VALUES ('2', 'Mind and Body Limits', '', 'Delve into the fundamentals of the human body – the muscular, skeletal, nervous, and circulatory systems.', '2');
+INSERT INTO challenges VALUES ('3', 'Pushing Past the Limits', '', 'Explore how the body responds when pushed past its limits.', '2');
+INSERT INTO challenges VALUES ('4', 'Outer Limits', '', 'Learn about athletes and adventure-seekers who push their bodies to the limit in extreme environments, from ocean bottoms to mountain tops.', '2');
+INSERT INTO challenges VALUES ('5', 'Personal Limits', '', 'Explore the common fitness activities.', '2');
+
+
+
+INSERT INTO challenges VALUES ('1', 'You Think You Can Fly?', '', 'Explore aerodynamics from the point of view of "the child in all of us" who thought we could fly by simply flapping our arms.', '3');
+INSERT INTO challenges VALUES ('2', 'Tell Tale Heart', '', 'Have four participants place their hands on one of several sensors that read their heartbeat.', '3');
+INSERT INTO challenges VALUES ('3', 'Making Faces', '', 'Create a face using their own picture plus facial features from many different contributors.', '3');
+INSERT INTO challenges VALUES ('4', '3D Evolution', '', 'Learn how their brain perceives 3D and experience some illusions that capitalize on this science.', '3');
+INSERT INTO challenges VALUES ('5', 'Friction Zone', '', 'Experiment with kinetic friction as they send sliders down ramps with different surfaces.', '3');
+
+
+SELECT * FROM challenges WHERE exhibitId = 1;
+
