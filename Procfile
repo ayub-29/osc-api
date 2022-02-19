@@ -1,1 +1,1 @@
-web: node index.jshero
+web: node index.js
