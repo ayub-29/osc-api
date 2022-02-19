@@ -2,7 +2,7 @@
 const express = require('express');
 const dao     = require('./dao.js');
 const app  = express();
-const port = process.argv[2] || 3000;
+const port = process.env.PORT || 5000;
 
 
 
