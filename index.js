@@ -11,6 +11,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.get('/api/exhibit', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     if(req.query.id){
