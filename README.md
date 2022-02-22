@@ -13,3 +13,5 @@ GET /api/challenges?id={id number}
 
 This end ponit returns all challenges based on the exhibit id
 
+This API is currently avaliable at https://oscapi.herokuapp.com/
+
